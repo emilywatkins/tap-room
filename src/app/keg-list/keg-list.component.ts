@@ -11,6 +11,8 @@ export class KegListComponent {
   @Output() clickedEdit = new EventEmitter();
   @Output() clickedSell = new EventEmitter();
 
+  // filterByEmptiness: string = "underTen";
+
   editButtonClicked(kegToEdit: Keg) {
     this.clickedEdit.emit(kegToEdit);
   }
@@ -19,6 +21,22 @@ export class KegListComponent {
     this.clickedSell.emit(kegToSell);
 
   }
+
+  stockColor(currentKeg) {
+    if(currentKeg.pints <= 10) {
+      return "bg-danger";
+    } else if (currentKeg.pints <= 42) {
+      return "bg-warning";
+    } else {
+      return "bg-success";
+    }
+  }
+
+  // onChange(optionFromMenu) {
+  //   this.filterByEmptiness = optionFromMenu;
+  // }
+
+
 
   constructor() { }
 }
