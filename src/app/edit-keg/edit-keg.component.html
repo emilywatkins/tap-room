@@ -1,0 +1,6 @@
+<div *ngIf="childSelectedKeg">
+  <h3>Edit Keg</h3>
+  <label>Enter New Name:</label>
+  <input [(ngModel)]="childSelectedKeg.name">
+  <button (click)="finishedEditing()">Done</button>
+</div>

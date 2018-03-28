@@ -2,5 +2,6 @@
   <h2>drink it up, yo</h2>
 </div>
 
-<app-keg-list [childKegList]="masterKegList"></app-keg-list>
+<app-keg-list [childKegList]="masterKegList" (clickSender)="editKeg($event)"></app-keg-list>
 <app-new-keg (sendKeg)="addKeg($event)"></app-new-keg>
+<app-edit-keg [childSelectedKeg]="selectedKeg" (clickedDone)="finishedEditing()"><app-edit-keg>
