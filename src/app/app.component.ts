@@ -13,4 +13,8 @@ export class AppComponent {
     new Keg('Sour Ron', 'Ron\'s Brew', 5, 5),
     new Keg('Fidget Cider', 'On Fleek', 5, 5),
   ];
+
+  addKeg(newKeg: Keg) {
+    this.masterKegList.push(newKeg);
+  }
 }

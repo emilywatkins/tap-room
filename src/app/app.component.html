@@ -3,3 +3,4 @@
 </div>
 
 <app-keg-list [childKegList]="masterKegList"></app-keg-list>
+<app-new-keg (sendKeg)="addKeg($event)"></app-new-keg>

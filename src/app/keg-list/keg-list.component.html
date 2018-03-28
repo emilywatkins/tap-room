@@ -1,3 +1,3 @@
 <ul>
-  <li *ngFor="let currentKeg of childKegList">{{currentKeg.name}}</li>
+  <li *ngFor="let currentKeg of childKegList">{{currentKeg.name}} from {{currentKeg.brand}}: ${{currentKeg.price}}/pint, {{currentKeg.ABV}}% ABV, pints remaining: {{currentKeg.pints}}</li>
 </ul>
