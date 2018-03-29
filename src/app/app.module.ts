@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { EmptyPipe } from './empty.pipe';
 
 
 import { AppComponent } from './app.component';
@@ -16,7 +17,8 @@ import { SellPintComponent } from './sell-pint/sell-pint.component';
     KegListComponent,
     NewKegComponent,
     EditKegComponent,
-    SellPintComponent
+    SellPintComponent,
+    EmptyPipe
   ],
   imports: [
     BrowserModule,

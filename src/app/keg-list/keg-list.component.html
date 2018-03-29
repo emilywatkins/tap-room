@@ -10,14 +10,14 @@
     <tr>
       <th scope="col">Name</th>
       <th scope="col">Brand</th>
-      <!-- <th scope="col"><button (click)="co(childKegList)">^</button>Price</th> -->
+      <th scope="col">Price<button>up</button><button>down</button></th>
       <th scope="col">ABV</th>
       <th scope="col">Pints remaining</th>
       <th scope="col"></th>
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor="let currentKeg of childKegList">
+    <tr *ngFor="let currentKeg of childKegList | emptiness">
       <td>{{currentKeg.name}}</td>
       <td>{{currentKeg.brand}}</td>
       <td>${{currentKeg.price}}</td>
