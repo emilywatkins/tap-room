@@ -3,8 +3,9 @@
     <tr>
       <th scope="col">Name</th>
       <th scope="col">Brand</th>
-      <th scope="col">Price<button>up</button><button>down</button></th>
-      <th scope="col">ABV</th>
+      <th scope="col">Price <button (click)="sortPriceAscClicked()"><i class="fas fa-caret-up"></i></button><button (click)="sortPriceDescClicked()"><i class="fas fa-caret-down"></i>
+</button></th>
+      <th scope="col">ABV <button (click)="sortABVAscClicked()"><i class="fas fa-caret-up"></i></button><button (click)="sortABVDescClicked()"><i class="fas fa-caret-up"></i></button></th>
       <th scope="col">Pints remaining</th>
       <th scope="col"></th>
       <th scope="col"></th>

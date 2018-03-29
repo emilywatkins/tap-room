@@ -21,8 +21,9 @@ export class KegListComponent {
     this.clickedSell.emit(kegToSell);
   }
 
+// ugly wet code written by Nico Dauntworks
 
-  compare(a,b) {
+  comparePriceAsc(a,b) {
     if (a.price > b.price)
       return -1;
     if (a.price < b.price)
@@ -30,13 +31,53 @@ export class KegListComponent {
     return 0;
   }
 
+  comparePriceDesc(a,b) {
+    if (a.price < b.price)
+      return -1;
+    if (a.price > b.price)
+      return 1;
+    return 0;
+  }
+
+  sortPriceAscClicked(compare){
+    this.childKegList.sort(this.comparePriceAsc);
+  }
+
+  sortPriceDescClicked(compare){
+    this.childKegList.sort(this.comparePriceDesc);
+  }
+
+  compareABVAsc(a,b) {
+    if (a.ABV > b.ABV)
+      return -1;
+    if (a.ABV < b.ABV)
+      return 1;
+    return 0;
+  }
+
+  compareABVDesc(a,b) {
+    if (a.ABV < b.ABV)
+      return -1;
+    if (a.ABV > b.ABV)
+      return 1;
+    return 0;
+  }
+  sortABVAscClicked(compare){
+    this.childKegList.sort(this.compareABVAsc);
+  }
+
+  sortABVDescClicked(compare){
+    this.childKegList.sort(this.compareABVDesc);
+  }
+
+
   stockColor(currentKeg) {
     if (currentKeg.pints === 0){
       // alert('you\'re all out of ' + currentKeg.name);
       return "deadKeg";
-    } else if(currentKeg.pints <= 2) {
+    } else if(currentKeg.pints <= 10) {
       return "bg-danger";
-    } else if (currentKeg.pints <= 5) {
+    } else if (currentKeg.pints <= 40) {
       return "bg-warning";
     } else {
       return "bg-success";
@@ -44,9 +85,10 @@ export class KegListComponent {
   }
 
 
-  ngOnInit() {
-    this.childKegList.sort(this.compare);
-  }
+  // ngOnInit() {
+  //   this.childKegList.sort(this.compare);
+  // }
+
 
   constructor() { }
 }

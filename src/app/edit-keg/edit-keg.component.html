@@ -1,6 +1,16 @@
 <div *ngIf="childSelectedKeg">
+  <br>
   <h3>Edit Keg</h3>
   <label>Enter New Name:</label>
   <input [(ngModel)]="childSelectedKeg.name">
+  <br>
+  <label>Enter New Price:</label>
+  <input [(ngModel)]="childSelectedKeg.price">
+  <br>
+  <label>Enter New ABV:</label>
+  <input tye='number' [(ngModel)]="childSelectedKeg.ABV">
+  <br>
+  <label>Enter New Pints Left:</label>
+  <input type='number' [(ngModel)]="childSelectedKeg.pints">
   <button (click)="finishedEditing()">Done</button>
 </div>
