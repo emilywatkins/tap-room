@@ -1,10 +1,3 @@
-<!-- <ul>
-  <li [class]="stockColor(currentKeg)" *ngFor="let currentKeg of childKegList">{{currentKeg.name}} from {{currentKeg.brand}}: ${{currentKeg.price}}/pint, {{currentKeg.ABV}}% ABV, pints remaining: {{currentKeg.pints}}
-  <button (click)="editButtonClicked(currentKeg)">Edit</button>
-  <button (click)="sellButtonClicked(currentKeg)">Sell Pint</button>
-  </li>
-</ul> -->
-
 <table class="table table-hover">
   <thead>
     <tr>
@@ -13,6 +6,7 @@
       <th scope="col">Price<button>up</button><button>down</button></th>
       <th scope="col">ABV</th>
       <th scope="col">Pints remaining</th>
+      <th scope="col"></th>
       <th scope="col"></th>
     </tr>
   </thead>
@@ -24,6 +18,7 @@
       <td>{{currentKeg.ABV}}%</td>
       <td [class]="stockColor(currentKeg)">{{currentKeg.pints}}</td>
       <td><button (click)="sellButtonClicked(currentKeg)">Sell Pint</button></td>
+      <td><button (click)="editButtonClicked(currentKeg)">Edit Keg</button></td>
     </tr>
   </tbody>
 </table>

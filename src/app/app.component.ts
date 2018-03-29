@@ -9,6 +9,7 @@ import { Keg } from './models/keg.model';
 export class AppComponent {
 
   selectedKeg = null;
+  selectedAdd = null;
 
   masterKegList: Keg[] = [
     new Keg('Brussel Sprout Stout', 'Blade Boys Brewers', 1, 5),
@@ -38,4 +39,17 @@ export class AppComponent {
     this.masterKegList.push(newKeg);
   }
 
+  compare(a,b) {
+    if (a.price < b.price) {
+      return -1;
+    } else if (a.price > b.price) {
+      return 1;
+    } else {
+      return 0;
+    }
+  }
+
+  sortKegs() {
+    this.masterKegList.sort(compare);
+  }
 }
