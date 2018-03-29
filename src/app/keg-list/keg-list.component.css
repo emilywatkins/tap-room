@@ -1,0 +1,8 @@
+.bg-success:hover, .bg-warning:hover, .bg-danger:hover {
+  color: yellow;
+}
+
+.deadKeg {
+  color: white;
+  background-color: black;
+}
